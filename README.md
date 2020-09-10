@@ -4,7 +4,9 @@ Title:"Copy Cat"
 
 WireFrames:
 ![wireframe](https://i.imgur.com/OHueYbj.png)
+
 MVP:
+
 Bronze)
 
     Functionality:
