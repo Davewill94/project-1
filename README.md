@@ -35,7 +35,7 @@ Gold)
         If time permits maybe add sounds for the colors like in the real game.
 
     Styling:
-        Polish?
+        Polish to more closely resembel the actual game.
 
 Post-MVP:
 
