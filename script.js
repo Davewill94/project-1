@@ -10,11 +10,9 @@ const quitButton = document.querySelector('#end');
 
 //event listeners for all the buttons
 //push to player sequence array and flash button
-//still need to add check function
 let colorsMatch;
 greenButton.addEventListener('click', function() {
     playerSequence.push(4);
-    //checking function()
     checkForMatch();
     greenFlash();
     if(colorsMatch) {
@@ -23,7 +21,6 @@ greenButton.addEventListener('click', function() {
 });
 redButton.addEventListener('click', function() {
     playerSequence.push(3);
-    //checking function()
     checkForMatch();
     redFlash();
     if(colorsMatch) {
@@ -32,7 +29,6 @@ redButton.addEventListener('click', function() {
 });
 blueButton.addEventListener('click', function () {
     playerSequence.push(2);
-    //checking function()
     checkForMatch();
     blueFlash();
     if(colorsMatch) {
@@ -41,7 +37,6 @@ blueButton.addEventListener('click', function () {
 });
 yellowButton.addEventListener('click', function() {
     playerSequence.push(1);
-    //checking function()
     checkForMatch();
     yellowFlash();
     if(colorsMatch) {
@@ -49,7 +44,34 @@ yellowButton.addEventListener('click', function() {
     }
 });
 
-
+//Still need to flesh this out abit.
+function checkForMatch() {
+    if(playerSequence[playerSequence.length-1] === colorSequenceGenerated[playerSequence.length-1]){
+        colorsMatch = true;
+        console.log('Match')
+    } else {
+        colorsMatch = false;
+        console.log('Not a Match')
+    }
+}
+function yellowFlash() {
+    yellowButton.style.backgroundColor = "yellow";
+}
+function blueFlash() {
+    blueButton.style.backgroundColor = "lightblue";
+}
+function redFlash() {
+    redButton.style.backgroundColor = "lightcoral";
+}
+function greenFlash() {
+    greenButton.style.backgroundColor = "lightgreen";
+}
+function colorReset() {
+    greenButton.style.backgroundColor = "green";
+    redButton.style.backgroundColor = "red";
+    yellowButton.style.backgroundColor = "darkkhaki";
+    blueButton.style.backgroundColor = "blue";
+}
 let isPlaying = false;
 
 startButton.addEventListener('click', function () {
@@ -69,64 +91,70 @@ let colorSequenceGenerated = [];
 let playerSequence = [];
 
 //number of successful turns to win
-let gameCountToWin = 30;
+let gameCountToWin = 6;
 //level counter
 let levelCounter = 1;
+//number of colors flashed
+let flashNum = 0;
+//variable for computer or players turn
+let turn;
 
 
-function startEnd(event) {
-    //reset arrays to empty on click
-    colorSequenceGenerated = [];
-    playerSequence = [];
-    if(event){
-        colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
-        console.log(colorSequenceGenerated)
-    //function call for play game
-        playGame();
+// function startEnd(event) {
+//     //reset arrays to empty on click
+//     colorSequenceGenerated = [];
+//     playerSequence = [];    
+//     flashNum = 0;
+//     turn = 'computer';
+//     if(event){
+//         for(let i = 0; i < gameCountToWin; i++) {
+//             colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);  
+//         }
+//         console.log(colorSequenceGenerated)
+//     //function call for play game
+//         playGame();
     
-    } else {
-        //end game
-    }
+//     } else {
+//         //end game
+//         colorReset();
+//     }
 
-};
+// };
 
 
-function playGame() {
-    for(let i = 0; i < colorSequenceGenerated.length; i++) {
-        console.log("made")
-        setTimeout(flashComputerColor(i), 500);
-        setTimeout(colorReset, 1000);
-    }
+// function playGame() {
+//     setInterval(eachTurn, 1000);
+// }
 
-}
+// function eachTurn () {
+//     if(turn==='computer') {
+//         colorReset();
+//         //console.log(colorSequenceGenerated[flashNum]); 
+//         setTimeout(function() {
+//             switch (colorSequenceGenerated[flashNum]) {
+//                 case 1:
+//                     yellowFlash();
+//                     break;
+//                 case 2:
+//                     blueFlash();
+//                     break;
+//                 case 3:
+//                     redFlash();
+//                     break;
+//                 case 4:
+//                     greenFlash();
+//                     break;
+//             }
+//             flashNum ++;
+//         }, 200);
+//     }
+//     if(flashNum === levelCounter) {
+//         colorReset();        
+//         turn = 'player';
 
-function yellowFlash() {
-    yellowButton.style.backgroundColor = "yellow";
-}
+//     }
+// }
 
-function blueFlash() {
-    blueButton.style.backgroundColor = "lightblue";
-}
 
-function redFlash() {
-    redButton.style.backgroundColor = "lightcoral";
-}
 
-function greenFlash() {
-    greenButton.style.backgroundColor = "lightgreen";
-}
 
-function colorReset() {
-    greenButton.style.backgroundColor = "green";
-    redButton.style.backgroundColor = "red";
-    yellowButton.style.backgroundColor = "darkkhaki";
-    blueButton.style.backgroundColor = "blue";
-}
-
-function checkForMatch() {
-    if(playerSequence[playerSequence.length-1] === colorSequenceGenerated[playerSequence.length-1]){
-        colorsMatch = true;
-    } else {
-        colorsMatch = false;
-    }
-}
