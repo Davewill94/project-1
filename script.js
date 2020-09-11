@@ -11,11 +11,16 @@ const quitButton = document.querySelector('#end');
 //event listeners for all the buttons
 //push to player sequence array and flash button
 //still need to add check function
+let colorsMatch;
 greenButton.addEventListener('click', function() {
     playerSequence.push(4);
     //checking function()
+    check();
     greenFlash();
-    console.log(playerSequence);
+    console.log(colorsMatch);
+    if(colorsMatch) {
+        setTimeout(colorReset, 250);
+    }
 });
 redButton.addEventListener('click', function() {
     playerSequence.push(3);
@@ -123,4 +128,8 @@ function colorReset() {
     redButton.style.backgroundColor = "red";
     yellowButton.style.backgroundColor = "darkkhaki";
     blueButton.style.backgroundColor = "blue";
+}
+
+function check() {
+    colorsMatch = true;
 }
