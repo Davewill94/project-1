@@ -16,7 +16,9 @@ greenButton.addEventListener('click', function() {
     checkForMatch();
     greenFlash();
     if(colorsMatch) {
-        setTimeout(colorReset, 250);
+        setTimeout(colorReset, reset/4);
+    } else {
+        //alert('Incorret Color');
     }
 });
 redButton.addEventListener('click', function() {
@@ -24,7 +26,9 @@ redButton.addEventListener('click', function() {
     checkForMatch();
     redFlash();
     if(colorsMatch) {
-        setTimeout(colorReset, 250);
+        setTimeout(colorReset, reset/4);
+    } else {
+        //alert('Incorret Color');
     }
 });
 blueButton.addEventListener('click', function () {
@@ -32,7 +36,9 @@ blueButton.addEventListener('click', function () {
     checkForMatch();
     blueFlash();
     if(colorsMatch) {
-        setTimeout(colorReset, 250);
+        setTimeout(colorReset, reset/4);
+    } else {
+        //alert('Incorret Color');
     }
 });
 yellowButton.addEventListener('click', function() {
@@ -40,19 +46,23 @@ yellowButton.addEventListener('click', function() {
     checkForMatch();
     yellowFlash();
     if(colorsMatch) {
-        setTimeout(colorReset, 250);
+        setTimeout(colorReset, reset/4);
+    } else {
+        //alert('Incorret Color');
     }
 });
 
 //Still need to flesh this out abit.
 function checkForMatch() {
     if(playerSequence[playerSequence.length-1] === colorSequenceGenerated[playerSequence.length-1]){
+        checkedArray.push('match');
         colorsMatch = true;
-        console.log('Match')
+        console.log(checkedArray);
     } else {
+        checkedArray.push('not-match');
         colorsMatch = false;
-        console.log('Not a Match')
     }
+    console.log(checkedArray);
 }
 function yellowFlash() {
     yellowButton.style.backgroundColor = "yellow";
@@ -74,87 +84,43 @@ function colorReset() {
 }
 let isPlaying = false;
 
-startButton.addEventListener('click', function () {
-    isPlaying = true;
-    startEnd(isPlaying);
-});
-
-quitButton.addEventListener('click', function () {
-    isPlaying = false;
-    startEnd(isPlaying);
-});
-
-
 //create empty array for color sequence that is generated
 //create empty array for player entered sequence
-let colorSequenceGenerated = [];
+let colorSequenceGenerated = [1,1,2,4,3];
 let playerSequence = [];
+let checkedArray = [];
 
 //number of successful turns to win
 let gameCountToWin = 6;
 //level counter
-let levelCounter = 1;
+let levelCounter = 5;
 //number of colors flashed
 let flashNum = 0;
 //variable for computer or players turn
 let turn;
+let reset = 2000;
 
-
-// function startEnd(event) {
-//     //reset arrays to empty on click
-//     colorSequenceGenerated = [];
-//     playerSequence = [];    
-//     flashNum = 0;
-//     turn = 'computer';
-//     if(event){
-//         for(let i = 0; i < gameCountToWin; i++) {
-//             colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);  
-//         }
-//         console.log(colorSequenceGenerated)
-//     //function call for play game
-//         playGame();
-    
-//     } else {
-//         //end game
-//         colorReset();
-//     }
-
-// };
-
-
-// function playGame() {
-//     setInterval(eachTurn, 1000);
-// }
-
-// function eachTurn () {
-//     if(turn==='computer') {
-//         colorReset();
-//         //console.log(colorSequenceGenerated[flashNum]); 
-//         setTimeout(function() {
-//             switch (colorSequenceGenerated[flashNum]) {
-//                 case 1:
-//                     yellowFlash();
-//                     break;
-//                 case 2:
-//                     blueFlash();
-//                     break;
-//                 case 3:
-//                     redFlash();
-//                     break;
-//                 case 4:
-//                     greenFlash();
-//                     break;
-//             }
-//             flashNum ++;
-//         }, 200);
-//     }
-//     if(flashNum === levelCounter) {
-//         colorReset();        
-//         turn = 'player';
-
-//     }
-// }
-
-
-
-
+//flash colors to match an array
+setInterval(() => {
+if(flashNum<levelCounter) {
+       if(colorSequenceGenerated[flashNum]===1) {
+        setTimeout(() => {
+            yellowFlash();            
+        }, reset/2);
+    } else if(colorSequenceGenerated[flashNum]===2) {
+        setTimeout(() => {
+            blueFlash();            
+        }, reset/2);
+    } else if(colorSequenceGenerated[flashNum]===3) {
+        setTimeout(() => {
+            redFlash();           
+        }, reset/2);
+    } else {
+        setTimeout(() => {
+            greenFlash();            
+        }, reset/2);
+    } 
+}
+colorReset();
+flashNum++;
+}, reset);
