@@ -39,7 +39,6 @@ blueButton.addEventListener('click', function () {
         setTimeout(colorReset, 250);
     }
 });
-
 yellowButton.addEventListener('click', function() {
     playerSequence.push(1);
     //checking function()
@@ -101,20 +100,6 @@ function playGame() {
 
 }
 
-
-
-function flashComputerColor(i) {
-    if(colorSequenceGenerated[i] === 1){
-        yellowButton.style.backgroundColor = "yellow";
-    } else if(colorSequenceGenerated[i] === 2) {
-        blueButton.style.backgroundColor = "lightblue";
-    } else if(colorSequenceGenerated[i]===3) {
-        redButton.style.backgroundColor = "lightcoral"; 
-    } else {
-        greenButton.style.backgroundColor = "lightgreen";       
-    }
-}
-
 function yellowFlash() {
     yellowButton.style.backgroundColor = "yellow";
 }
@@ -139,5 +124,9 @@ function colorReset() {
 }
 
 function checkForMatch() {
-    colorsMatch = true;
+    if(playerSequence[playerSequence.length-1] === colorSequenceGenerated[playerSequence.length-1]){
+        colorsMatch = true;
+    } else {
+        colorsMatch = false;
+    }
 }
