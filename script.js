@@ -15,9 +15,8 @@ let colorsMatch;
 greenButton.addEventListener('click', function() {
     playerSequence.push(4);
     //checking function()
-    check();
+    checkForMatch();
     greenFlash();
-    console.log(colorsMatch);
     if(colorsMatch) {
         setTimeout(colorReset, 250);
     }
@@ -25,21 +24,30 @@ greenButton.addEventListener('click', function() {
 redButton.addEventListener('click', function() {
     playerSequence.push(3);
     //checking function()
+    checkForMatch();
     redFlash();
-    console.log(playerSequence);
+    if(colorsMatch) {
+        setTimeout(colorReset, 250);
+    }
 });
 blueButton.addEventListener('click', function () {
     playerSequence.push(2);
     //checking function()
+    checkForMatch();
     blueFlash();
-    console.log(playerSequence);
+    if(colorsMatch) {
+        setTimeout(colorReset, 250);
+    }
 });
 
 yellowButton.addEventListener('click', function() {
     playerSequence.push(1);
     //checking function()
+    checkForMatch();
     yellowFlash();
-    console.log(playerSequence);
+    if(colorsMatch) {
+        setTimeout(colorReset, 250);
+    }
 });
 
 
@@ -130,6 +138,6 @@ function colorReset() {
     blueButton.style.backgroundColor = "blue";
 }
 
-function check() {
+function checkForMatch() {
     colorsMatch = true;
 }
