@@ -1,3 +1,43 @@
 body {
     background-color: lemonchiffon;
 }
+
+header {
+    text-align: center;
+}
+h1 {
+    margin: 15px;
+}
+.mainboard {
+    display: flex;
+    
+}
+.optionButtons {
+    margin: 0.6em;
+}
+
+.button {
+    width: 10vw;
+    height: 10vw;
+    margin: 0.5em;
+  }
+
+  .rows {
+      text-align: center;
+  }
+  .green{
+      background-color: green;
+  }
+  .blue{
+      background-color: blue;
+  }
+
+  .red {
+      background-color: red;
+  }
+
+  .yellow {
+      background-color: yellow;
+  }
+
+
