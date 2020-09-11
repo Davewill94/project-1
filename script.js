@@ -100,27 +100,31 @@ let flashNum = 0;
 let turn;
 let reset = 2000;
 
+//only run after start game is pushed
+startButton.addEventListener('click', function() {
 //flash colors to match an array
 setInterval(() => {
-if(flashNum<levelCounter) {
-       if(colorSequenceGenerated[flashNum]===1) {
-        setTimeout(() => {
-            yellowFlash();            
-        }, reset/2);
-    } else if(colorSequenceGenerated[flashNum]===2) {
-        setTimeout(() => {
-            blueFlash();            
-        }, reset/2);
-    } else if(colorSequenceGenerated[flashNum]===3) {
-        setTimeout(() => {
-            redFlash();           
-        }, reset/2);
-    } else {
-        setTimeout(() => {
-            greenFlash();            
-        }, reset/2);
-    } 
-}
-colorReset();
-flashNum++;
-}, reset);
+    if(flashNum<levelCounter) {
+        if(colorSequenceGenerated[flashNum]===1) {
+            setTimeout(() => {
+                yellowFlash();            
+            }, reset/2);
+        } else if(colorSequenceGenerated[flashNum]===2) {
+            setTimeout(() => {
+                blueFlash();            
+            }, reset/2);
+        } else if(colorSequenceGenerated[flashNum]===3) {
+            setTimeout(() => {
+                redFlash();           
+            }, reset/2);
+        } else {
+            setTimeout(() => {
+                greenFlash();            
+            }, reset/2);
+        } 
+    }
+    colorReset();
+    flashNum++;
+    }, reset);
+})
+
