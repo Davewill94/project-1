@@ -34,10 +34,11 @@ let playerSequence = [];
 //number of successful turns to win
 let gameCountToWin = 30;
 //level counter
+let levelCounter = 0;
+
 
 function playingGame(event) {
     //reset arrays to empty on click
-    console.log(event);
     colorSequenceGenerated = [];
     playerSequence = [];
     if(event){
@@ -51,7 +52,18 @@ function playingGame(event) {
 
 };
 
+function flashComputerColor() {
 
+    greenButton.style.backgroundColor = "lightgreen";
+    redButton.style.backgroundColor = "lightred";
+    yellowButton.style.backgroundColor = "lightyellow";
+    blueButton.style.backgroundColor = "lightblue";
 
+}
 
-
+function colorReset() {
+    greenButton.style.backgroundColor = "green";
+    redButton.style.backgroundColor = "red";
+    yellowButton.style.backgroundColor = "yellow";
+    blueButton.style.backgroundColor = "blue";
+}
