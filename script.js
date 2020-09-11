@@ -13,8 +13,17 @@ const quitButton = document.querySelector('#end');
 // redButton.addEventListener('click', );
 // blueButton.addEventListener('click', );
 // yellowButton.addEventListener('click', );
-startButton.addEventListener('click', playingGame);
-quitButton.addEventListener('click', playingGame);
+let isPlaying = false;
+
+startButton.addEventListener('click', function () {
+    isPlaying = true;
+    playingGame(isPlaying);
+});
+
+quitButton.addEventListener('click', function () {
+    isPlaying = false;
+    playingGame(isPlaying);
+});
 
 
 //create empty array for color sequence that is generated
@@ -26,14 +35,20 @@ let playerSequence = [];
 let gameCountToWin = 30;
 //level counter
 
-function playingGame() {
+function playingGame(event) {
     //reset arrays to empty on click
+    console.log(event);
     colorSequenceGenerated = [];
     playerSequence = [];
-    for( let i = 0; i < gameCountToWin; i++) {
-        colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
+    if(event){
+        for( let i = 0; i < gameCountToWin; i++) {
+            colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
+        }
+    console.log(colorSequenceGenerated);    
+    } else {
+        //end game
     }
-    console.log(colorSequenceGenerated);
+
 };
 
 
