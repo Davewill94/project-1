@@ -150,6 +150,7 @@ let roundComplete = false;
 
 //only run after start game is pushed
 startButton.addEventListener('click', function() {
+    isPlaying=true;
     if(levelCounter===1){
         sequenceGen();
     }
@@ -258,27 +259,31 @@ const pageTitle = document.getElementsByTagName('h1');
 let titleColor = 0;
 function titleColorChange() {
     setInterval(() => {
-        if(titleColor===0) {
-            pageTitle[0].style.color = 'yellow';
-            titleColor++;
-        } else if(titleColor===1) {
-            pageTitle[0].style.color = 'blue';
-            titleColor++;
-        } else if(titleColor===2) {
-            pageTitle[0].style.color = 'red';
-            titleColor++;                
-        } else {
-            pageTitle[0].style.color = 'green'; 
-            titleColor=0;           
+        if(!isPlaying) {
+            if(titleColor===0) {
+                pageTitle[0].style.color = 'yellow';
+                titleColor++;
+            } else if(titleColor===1) {
+                pageTitle[0].style.color = 'blue';
+                titleColor++;
+            } else if(titleColor===2) {
+                pageTitle[0].style.color = 'red';
+                titleColor++;                
+            } else {
+                pageTitle[0].style.color = 'green'; 
+                titleColor=0;           
+            }            
         }
+
     }, 5000);
 };
 titleColorChange();
 
 //end game button
 const endGameButton = document.querySelector('#end');
-endGameButton.addEventListener('click', function(){
+endGameButton.addEventListener('click', function() {
     //reset everthing if the end game button is pressed
+    whosTurn.innerText = 'Press Start to Begin Playing';
     colorSequenceGenerated = [];
     playerSequence = [];
     checkedArray = [];
@@ -289,4 +294,6 @@ endGameButton.addEventListener('click', function(){
     turn='cpu';
     reset = 1500;
     roundComplete = false;
+    isPlaying = false;
+    titleColor = 0;
 });
