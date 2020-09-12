@@ -8,6 +8,9 @@ const yellowButton = document.querySelector('#yellow');
 const startButton = document.querySelector('#start');
 const quitButton = document.querySelector('#end');
 
+//query selector for the round
+const scoreUpdate = document.querySelector('#round');
+
 //event listeners for all the buttons
 //push to player sequence array and flash button
 let colorsMatch;
@@ -151,6 +154,7 @@ startButton.addEventListener('click', function() {
  }
 
  function playTurn() {
+    scoreUpdate.innerText = `${levelCounter}`;
     playerSequence = [];
     checkedArray = []; 
     //prevent user click before sequence complete
