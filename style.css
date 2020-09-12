@@ -18,9 +18,10 @@ h1 {
 }
 
 .button {
-    width: 10vw;
-    height: 10vw;
+    width: 15vw;
+    height: 15vw;
     margin: 0.5em;
+    border-radius: 10%;
   }
 
 .rows {
@@ -59,4 +60,17 @@ h1 {
 }
 .navHead {
     text-align: center;
+}
+#sciencecat {
+    align-self: center;
+    height: 12vw;
+    width: 12vw;
+    border-radius: 65%;
+}
+
+.subHead {
+    margin-top: 0px
+}
+.topHead {
+    margin-bottom: 5px;
 }
