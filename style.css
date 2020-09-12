@@ -23,37 +23,40 @@ h1 {
     margin: 0.5em;
   }
 
-  .rows {
-      text-align: center;
-  }
-  .green{
-      background-color: green;
-  }
-  .blue{
-      background-color: blue;
-  }
+.rows {
+    text-align: center;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
 
-  .red {
-      background-color: red;
-  }
+.red {
+    background-color: red;
+}
 
-  .yellow {
-      background-color: darkkhaki;
-  }
+.yellow {
+    background-color: darkkhaki;
+}
 
-  .wrapper {
+.wrapper {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     justify-content: center;
-  }
-  .flexWrapper {
+}
+.flexWrapper {
     display: flex;
     flex: 1;
-  }
-  .difficutlySelect {
-      display: flex;
-      flex-direction: column;
-      flex: 0 25vw;
-      background-color: rosybrown;
-  }
+}
+.difficutlySelect {
+    display: flex;
+    flex-direction: column;
+    flex: 0 25vw;
+    background-color: rosybrown;
+}
+.navHead {
+    text-align: center;
+}

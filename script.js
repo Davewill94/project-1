@@ -197,3 +197,8 @@ startButton.addEventListener('click', function() {
         }, 100);
     }
  };
+
+
+ //adding functionality for the difficulty selector
+
+ 
