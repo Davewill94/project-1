@@ -19,7 +19,8 @@ greenButton.addEventListener('click', function(event) {
         if(colorsMatch) {
             setTimeout(colorReset, reset/4);
         } else {
-            //alert('Incorret Color');
+            alert('Incorret Color');
+            location.reload();
         }  
     } else {
         event.preventDefault();
@@ -34,7 +35,8 @@ redButton.addEventListener('click', function(event) {
         if(colorsMatch) {
             setTimeout(colorReset, reset/4);
         } else {
-            //alert('Incorret Color');
+            alert('Incorret Color');
+            location.reload();
         }
     } else {
         event.preventDefault();
@@ -49,7 +51,8 @@ blueButton.addEventListener('click', function (event) {
         if(colorsMatch) {
             setTimeout(colorReset, reset/4);
         } else {
-            //alert('Incorret Color');
+            alert('Incorret Color');
+            location.reload();
         }        
     } else {
         event.preventDefault();
@@ -64,7 +67,8 @@ yellowButton.addEventListener('click', function(event) {
         if(colorsMatch) {
             setTimeout(colorReset, reset/4);
         } else {
-            //alert('Incorret Color');
+            alert('Incorret Color');
+            location.reload();
         }
     } else {
         event.preventDefault();
@@ -74,15 +78,25 @@ yellowButton.addEventListener('click', function(event) {
 
 //Still need to flesh this out abit.
 function checkForMatch() {
-    if(playerSequence[playerSequence.length-1] === colorSequenceGenerated[playerSequence.length-1]){
+    if(playerSequence[playerSequence.length-1] === 
+        colorSequenceGenerated[playerSequence.length-1]){
         checkedArray.push('match');
         colorsMatch = true;
-        console.log(checkedArray);
+        if(checkedArray.length === colorSequenceGenerated.length) {
+            levelCounter++;
+            roundComplete=true;
+            sequenceGen();
+            console.log(turn);
+            turn="cpu";
+            flashNum=0;
+            playTurn();
+        }
     } else {
         checkedArray.push('not-match');
         colorsMatch = false;
     }
-    console.log(checkedArray);
+    // console.log(checkedArray);
+    // console.log(levelCounter);
 }
 function yellowFlash() {
     yellowButton.style.backgroundColor = "yellow";
@@ -106,22 +120,39 @@ let isPlaying = false;
 
 //create empty array for color sequence that is generated
 //create empty array for player entered sequence
-let colorSequenceGenerated = [1,1,2,4,3];
+let colorSequenceGenerated = [];
 let playerSequence = [];
 let checkedArray = [];
 
 //number of successful turns to win
 let gameCountToWin = 6;
 //level counter
-let levelCounter = 5;
+let levelCounter = 1;
 //number of colors flashed
 let flashNum = 0;
 //variable for computer or players turn
 let turn='cpu';
 let reset = 2000;
+let roundComplete = false;
 
 //only run after start game is pushed
 startButton.addEventListener('click', function() {
+    if(levelCounter===1){
+        sequenceGen();
+    }
+    playTurn();
+})
+ function sequenceGen() {
+     console.log("madit")
+     if(colorSequenceGenerated.length===levelCounter-1){
+         colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
+         console.log(colorSequenceGenerated);
+     }
+ }
+
+ function playTurn() {
+    playerSequence = [];
+    checkedArray = []; 
     //prevent user click before sequence complete
     if(turn==='cpu'){
 
@@ -151,7 +182,14 @@ startButton.addEventListener('click', function() {
             }
             colorReset();
             flashNum++;
-            console.log(turn);
+            //console.log(turn);
             }, reset);
+    } else if(turn==="player") {
+        let playercheck =  setInterval(() => {
+            if (roundComplete) {
+                clearInterval(playercheck);
+                turn==="cpu";
+            }
+        }, 100);
     }
-})
+ };
