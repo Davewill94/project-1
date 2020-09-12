@@ -63,6 +63,7 @@ h1 {
 }
 .navHead {
     text-align: center;
+    margin-bottom: 5px;
 }
 #sciencecat {
     align-self: center;
@@ -80,5 +81,9 @@ h1 {
 .instructions {
     list-style: none;
     padding: 0px;
-    margin: 5px 20px;
+    margin: 10px 20px 5px 20px;
+}
+.headerSub {
+    font-family: 'Carter One', cursive;
+    font-size: 2vw;
 }

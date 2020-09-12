@@ -150,12 +150,15 @@ let roundComplete = false;
 
 //only run after start game is pushed
 startButton.addEventListener('click', function() {
-    isPlaying=true;
-    if(levelCounter===1){
-        sequenceGen();
+    if(isPlaying===false) {
+        isPlaying=true;
+        if(levelCounter===1){
+            sequenceGen();
+        }
+        playTurn();
     }
-    playTurn();
 })
+
  function sequenceGen() {
      //create one random color
      if(colorSequenceGenerated.length===levelCounter-1 && diffLevel===1){
