@@ -146,11 +146,16 @@ startButton.addEventListener('click', function() {
     playTurn();
 })
  function sequenceGen() {
-     console.log("madit")
-     if(colorSequenceGenerated.length===levelCounter-1){
+     //console.log("madit")
+     if(colorSequenceGenerated.length===levelCounter-1 && diffLevel===1){
          colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
          console.log(colorSequenceGenerated);
+     } else {
+         for(let i = 0; i < diffLevel; i++) {
+            colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
+         }
      }
+    console.log(colorSequenceGenerated);
  }
 
  function playTurn() {
@@ -162,7 +167,7 @@ startButton.addEventListener('click', function() {
 
         //flash colors to match an array
         let computer = setInterval(() => {
-            if(flashNum<levelCounter) {
+            if(flashNum<colorSequenceGenerated.length) {
                 if(colorSequenceGenerated[flashNum]===1) {
                     setTimeout(() => {
                         yellowFlash();            
@@ -198,7 +203,12 @@ startButton.addEventListener('click', function() {
     }
  };
 
-
+let diffLevel = 1;
  //adding functionality for the difficulty selector
+const diffSubmit = document.querySelector('#diffSubmit');
+diffSubmit.addEventListener('click', function() {
+    event.preventDefault();
+    const difficulty = document.getElementsByTagName("select");
+    diffLevel = parseInt(difficulty.value.value);
+});
 
- 
