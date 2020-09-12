@@ -8,8 +8,9 @@ header {
 h1 {
     margin: 15px;
 }
-.mainboard {
-    display: flex;
+.mainBoard {
+    flex: 1;
+    justify-content: center;
     
 }
 .optionButtons {
@@ -40,4 +41,19 @@ h1 {
       background-color: darkkhaki;
   }
 
-
+  .wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flexWrapper {
+    display: flex;
+    flex: 1;
+  }
+  .difficutlySelect {
+      display: flex;
+      flex-direction: column;
+      flex: 0 25vw;
+      background-color: rosybrown;
+  }

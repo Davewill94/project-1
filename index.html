@@ -2,32 +2,39 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>&#128570;Copy Cat&#128570;</title>
+        <title>&#128570; Copy Cat    &#128570;</title>
         <link rel="stylesheet" href="style.css"/>
     </head>
-    <body>
+    <body class='wrapper'>
         <header>
             <h1>Copy Cat</h1>
             <p>Can you keep up?</p>
         </header>
-        <div class = "mainBoard">
-            <div class="rows" id="main-btn">
-                <button class="button yellow" id="yellow"></button>
-                <button class="button blue" id="blue"></button>
-            </div>
-            <div class="rows">
-                <button class="button red" id="red"></button>
-                <button class="button green" id="green"></button>
-            </div> 
-            <div class="rows">
-                <p>Current Round: </p>
-                <p id="round">0</p>
-            </div>
-            <div class="rows">
-                <button class="optionButtons" id="start">Start Game!</button>
-                <button class="optionButtons" id="end">End Game</button>
-            </div>         
+        <div class='flexWrapper'>
+            <aside class='difficutlySelect'>
+                <P>How to play</P>
+                <p>Need a challenge?</p>
+            </aside>
+            <div class = "mainBoard">
+                <div class="rows" id="main-btn">
+                    <button class="button yellow" id="yellow"></button>
+                    <button class="button blue" id="blue"></button>
+                </div>
+                <div class="rows">
+                    <button class="button red" id="red"></button>
+                    <button class="button green" id="green"></button>
+                </div> 
+                <div class="rows">
+                    <p>Current Round: </p>
+                    <p id="round">0</p>
+                </div>
+                <div class="rows">
+                    <button class="optionButtons" id="start">Start Game!</button>
+                    <button class="optionButtons" id="end">End Game</button>
+                </div>         
+            </div>            
         </div>
+
 
         <script src="script.js"></script>
     </body>
