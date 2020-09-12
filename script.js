@@ -250,3 +250,27 @@ muteButton.addEventListener('click', function() {
     }
 
 });
+
+//display to show that it is the computers tern or players turn
+
+//Change color of the title every few seconds
+const pageTitle = document.getElementsByTagName('h1');
+let titleColor = 0;
+function titleColorChange() {
+    setInterval(() => {
+        if(titleColor===0) {
+            pageTitle[0].style.color = 'yellow';
+            titleColor++;
+        } else if(titleColor===1) {
+            pageTitle[0].style.color = 'blue';
+            titleColor++;
+        } else if(titleColor===2) {
+            pageTitle[0].style.color = 'red';
+            titleColor++;                
+        } else {
+            pageTitle[0].style.color = 'green'; 
+            titleColor=0;           
+        }
+    }, 5000);
+};
+titleColorChange();
