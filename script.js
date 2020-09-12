@@ -167,13 +167,10 @@ startButton.addEventListener('click', function() {
     scoreUpdate.innerText = `${levelCounter}`;
     playerSequence = [];
     checkedArray = [];
-    console.log(gameCountToAdvance);
-    console.log(levelCounter);
-    //incrament color frequence
-    if(gameCountToAdvance===levelCounter) {
+    //incrament color frequence to make game more challenging
+    if(gameCountToAdvance===levelCounter && reset-250!=500) {
         reset -=250;
         gameCountToAdvance+=5;
-        console.log(reset, gameCountToAdvance)
     } 
     //prevent user click before sequence complete
     if(turn==='cpu'){
