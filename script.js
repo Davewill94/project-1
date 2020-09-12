@@ -187,6 +187,7 @@ startButton.addEventListener('click', function() {
         //flash colors to match an array
         let computer = setInterval(() => {
             if(flashNum<colorSequenceGenerated.length) {
+                whosTurn.innerText = "Pay attention";
                 if(colorSequenceGenerated[flashNum]===1) {
                     setTimeout(() => {
                         yellowFlash();            
@@ -206,7 +207,8 @@ startButton.addEventListener('click', function() {
                 } 
             } else {
                 turn='player';
-                clearInterval(computer)
+                whosTurn.innerText = "You're Up!";
+                clearInterval(computer);
             }
             colorReset();
             flashNum++;
@@ -216,7 +218,7 @@ startButton.addEventListener('click', function() {
         let playercheck =  setInterval(() => {
             if (roundComplete) {
                 clearInterval(playercheck);
-                turn==="cpu";
+                turn="cpu";
             }
         }, 100);
     }
@@ -252,6 +254,8 @@ muteButton.addEventListener('click', function() {
 });
 
 //display to show that it is the computers tern or players turn
+const whosTurn = document.querySelector('#whosTurn');
+
 
 //Change color of the title every few seconds
 const pageTitle = document.getElementsByTagName('h1');
