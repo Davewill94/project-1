@@ -98,8 +98,6 @@ function checkForMatch() {
         checkedArray.push('not-match');
         colorsMatch = false;
     }
-    // console.log(checkedArray);
-    // console.log(levelCounter);
 }
 function yellowFlash() {
     if(audio) {
@@ -168,7 +166,6 @@ startButton.addEventListener('click', function() {
             colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
          }
      }
-    console.log(colorSequenceGenerated);
  }
 
  function playTurn() {
@@ -212,7 +209,6 @@ startButton.addEventListener('click', function() {
             }
             colorReset();
             flashNum++;
-            //console.log(turn);
             }, reset);
     } else if(turn==="player") {
         let playercheck =  setInterval(() => {
@@ -278,3 +274,19 @@ function titleColorChange() {
     }, 5000);
 };
 titleColorChange();
+
+//end game button
+const endGameButton = document.querySelector('#end');
+endGameButton.addEventListener('click', function(){
+    //reset everthing if the end game button is pressed
+    colorSequenceGenerated = [];
+    playerSequence = [];
+    checkedArray = [];
+    gameCountToAdvance = 5;
+    levelCounter = 1;
+    scoreUpdate.innerText = `0`;
+    flashNum = 0;
+    turn='cpu';
+    reset = 1500;
+    roundComplete = false;
+});
