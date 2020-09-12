@@ -11,45 +11,65 @@ const quitButton = document.querySelector('#end');
 //event listeners for all the buttons
 //push to player sequence array and flash button
 let colorsMatch;
-greenButton.addEventListener('click', function() {
-    playerSequence.push(4);
-    checkForMatch();
-    greenFlash();
-    if(colorsMatch) {
-        setTimeout(colorReset, reset/4);
+greenButton.addEventListener('click', function(event) {
+    if(turn==='player') {
+        playerSequence.push(4);
+        checkForMatch();
+        greenFlash();
+        if(colorsMatch) {
+            setTimeout(colorReset, reset/4);
+        } else {
+            //alert('Incorret Color');
+        }  
     } else {
-        //alert('Incorret Color');
+        event.preventDefault();
     }
+
 });
-redButton.addEventListener('click', function() {
-    playerSequence.push(3);
-    checkForMatch();
-    redFlash();
-    if(colorsMatch) {
-        setTimeout(colorReset, reset/4);
+redButton.addEventListener('click', function(event) {
+    if(turn==='player') {
+        playerSequence.push(3);
+        checkForMatch();
+        redFlash();
+        if(colorsMatch) {
+            setTimeout(colorReset, reset/4);
+        } else {
+            //alert('Incorret Color');
+        }
     } else {
-        //alert('Incorret Color');
+        event.preventDefault();
     }
+
 });
-blueButton.addEventListener('click', function () {
-    playerSequence.push(2);
-    checkForMatch();
-    blueFlash();
-    if(colorsMatch) {
-        setTimeout(colorReset, reset/4);
+blueButton.addEventListener('click', function (event) {
+    if(turn==='player') {
+        playerSequence.push(2);
+        checkForMatch();
+        blueFlash();
+        if(colorsMatch) {
+            setTimeout(colorReset, reset/4);
+        } else {
+            //alert('Incorret Color');
+        }        
     } else {
-        //alert('Incorret Color');
+        event.preventDefault();
     }
+
 });
-yellowButton.addEventListener('click', function() {
-    playerSequence.push(1);
-    checkForMatch();
-    yellowFlash();
-    if(colorsMatch) {
-        setTimeout(colorReset, reset/4);
+yellowButton.addEventListener('click', function(event) {
+    if(turn==='player') {
+        playerSequence.push(1);
+        checkForMatch();
+        yellowFlash();
+        if(colorsMatch) {
+            setTimeout(colorReset, reset/4);
+        } else {
+            //alert('Incorret Color');
+        }
     } else {
-        //alert('Incorret Color');
+        event.preventDefault();
     }
+
 });
 
 //Still need to flesh this out abit.
@@ -97,34 +117,41 @@ let levelCounter = 5;
 //number of colors flashed
 let flashNum = 0;
 //variable for computer or players turn
-let turn;
+let turn='cpu';
 let reset = 2000;
 
 //only run after start game is pushed
 startButton.addEventListener('click', function() {
-//flash colors to match an array
-setInterval(() => {
-    if(flashNum<levelCounter) {
-        if(colorSequenceGenerated[flashNum]===1) {
-            setTimeout(() => {
-                yellowFlash();            
-            }, reset/2);
-        } else if(colorSequenceGenerated[flashNum]===2) {
-            setTimeout(() => {
-                blueFlash();            
-            }, reset/2);
-        } else if(colorSequenceGenerated[flashNum]===3) {
-            setTimeout(() => {
-                redFlash();           
-            }, reset/2);
-        } else {
-            setTimeout(() => {
-                greenFlash();            
-            }, reset/2);
-        } 
-    }
-    colorReset();
-    flashNum++;
-    }, reset);
-})
+    //prevent user click before sequence complete
+    if(turn==='cpu'){
 
+        //flash colors to match an array
+        let computer = setInterval(() => {
+            if(flashNum<levelCounter) {
+                if(colorSequenceGenerated[flashNum]===1) {
+                    setTimeout(() => {
+                        yellowFlash();            
+                    }, reset/2);
+                } else if(colorSequenceGenerated[flashNum]===2) {
+                    setTimeout(() => {
+                        blueFlash();            
+                    }, reset/2);
+                } else if(colorSequenceGenerated[flashNum]===3) {
+                    setTimeout(() => {
+                        redFlash();           
+                    }, reset/2);
+                } else {
+                    setTimeout(() => {
+                        greenFlash();            
+                    }, reset/2);
+                } 
+            } else {
+                turn='player';
+                clearInterval(computer)
+            }
+            colorReset();
+            flashNum++;
+            console.log(turn);
+            }, reset);
+    }
+})
