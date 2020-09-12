@@ -243,8 +243,10 @@ const muteButton = document.querySelector('#mute');
 muteButton.addEventListener('click', function() {
     if(audio) {
         audio = false;
+        muteButton.innerText = 'Unmute';
     } else {
         audio = true;
+        muteButton.innerText = 'Mute';
     }
 
 });
