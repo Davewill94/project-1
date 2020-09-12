@@ -131,15 +131,15 @@ let colorSequenceGenerated = [];
 let playerSequence = [];
 let checkedArray = [];
 
-//number of successful turns to win
-let gameCountToWin = 6;
+//number of successful turns to advance speed of game
+let gameCountToAdvance = 5;
 //level counter
 let levelCounter = 1;
 //number of colors flashed
 let flashNum = 0;
 //variable for computer or players turn
 let turn='cpu';
-let reset = 2000;
+let reset = 1500;
 let roundComplete = false;
 
 //only run after start game is pushed
@@ -150,11 +150,12 @@ startButton.addEventListener('click', function() {
     playTurn();
 })
  function sequenceGen() {
-     //console.log("madit")
+     //create one random color
      if(colorSequenceGenerated.length===levelCounter-1 && diffLevel===1){
          colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
          console.log(colorSequenceGenerated);
      } else {
+    //create multiple random colors to match difficulty level selected
          for(let i = 0; i < diffLevel; i++) {
             colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
          }
@@ -165,10 +166,17 @@ startButton.addEventListener('click', function() {
  function playTurn() {
     scoreUpdate.innerText = `${levelCounter}`;
     playerSequence = [];
-    checkedArray = []; 
+    checkedArray = [];
+    console.log(gameCountToAdvance);
+    console.log(levelCounter);
+    //incrament color frequence
+    if(gameCountToAdvance===levelCounter) {
+        reset -=250;
+        gameCountToAdvance+=5;
+        console.log(reset, gameCountToAdvance)
+    } 
     //prevent user click before sequence complete
     if(turn==='cpu'){
-
         //flash colors to match an array
         let computer = setInterval(() => {
             if(flashNum<colorSequenceGenerated.length) {
