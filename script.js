@@ -102,21 +102,25 @@ function checkForMatch() {
     // console.log(levelCounter);
 }
 function yellowFlash() {
-    yellowButton.style.backgroundColor = "yellow";
+    yellowButton.style.backgroundColor = "rgba(255, 255, 2, 0.6)";
+    yellowAudio.play();
 }
 function blueFlash() {
     blueButton.style.backgroundColor = "lightblue";
+    blueAudio.play();
 }
 function redFlash() {
     redButton.style.backgroundColor = "lightcoral";
+    redAudio.play();
 }
 function greenFlash() {
     greenButton.style.backgroundColor = "lightgreen";
+    greenAudio.play();
 }
 function colorReset() {
     greenButton.style.backgroundColor = "green";
     redButton.style.backgroundColor = "red";
-    yellowButton.style.backgroundColor = "darkkhaki";
+    yellowButton.style.backgroundColor = "yellow";
     blueButton.style.backgroundColor = "blue";
 }
 let isPlaying = false;
@@ -202,7 +206,7 @@ startButton.addEventListener('click', function() {
         }, 100);
     }
  };
-
+//auto set the difficulty to 1
 let diffLevel = 1;
  //adding functionality for the difficulty selector
 const diffSubmit = document.querySelector('#diffSubmit');
@@ -211,4 +215,10 @@ diffSubmit.addEventListener('click', function() {
     const difficulty = document.getElementsByTagName("select");
     diffLevel = parseInt(difficulty.value.value);
 });
+
+//audio links to use
+const greenAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+const blueAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
+const redAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
+const yellowAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 
