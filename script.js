@@ -102,20 +102,28 @@ function checkForMatch() {
     // console.log(levelCounter);
 }
 function yellowFlash() {
+    if(audio) {
+        yellowAudio.play();  
+    }
     yellowButton.style.backgroundColor = "rgba(255, 255, 2, 0.6)";
-    yellowAudio.play();
 }
 function blueFlash() {
+    if(audio) {
+        blueAudio.play();
+    }
     blueButton.style.backgroundColor = "lightblue";
-    blueAudio.play();
 }
 function redFlash() {
+    if(audio) {
+        redAudio.play();
+    }
     redButton.style.backgroundColor = "lightcoral";
-    redAudio.play();
 }
 function greenFlash() {
+    if(audio) {
+        greenAudio.play();        
+    }
     greenButton.style.backgroundColor = "lightgreen";
-    greenAudio.play();
 }
 function colorReset() {
     greenButton.style.backgroundColor = "green";
@@ -168,6 +176,8 @@ startButton.addEventListener('click', function() {
     playerSequence = [];
     checkedArray = [];
     //incrament color frequence to make game more challenging
+    //if is too keep reset time above 500ms at that speed sounds are delayed
+    ////incomparison to the flashes
     if(gameCountToAdvance===levelCounter && reset-250!=500) {
         reset -=250;
         gameCountToAdvance+=5;
@@ -227,3 +237,14 @@ const blueAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.m
 const redAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
 const yellowAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
 
+//dissable audio option
+let audio = true;
+const muteButton = document.querySelector('#mute');
+muteButton.addEventListener('click', function() {
+    if(audio) {
+        audio = false;
+    } else {
+        audio = true;
+    }
+
+});
