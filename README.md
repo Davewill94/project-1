@@ -9,7 +9,7 @@ MVP:
 
 Bronze)
 
-    Functionality: X
+    Functionality:
         A game with four different tiles that light up for one second when they are active.
         Once a game has been started a random color should light up. 
         The game should light same existing pattern every turn and add one additional color on each turn. 
@@ -18,12 +18,12 @@ Bronze)
         If the player makes it thourgh the entire turns sequence without an error increment their score. 
         Make a start game and reset game button.
 
-    Styling: X
+    Styling:
         At this point I hope to have decent styling in place.
         Four basic squares in a 2x2 pattern.
 Silver)
 
-    Functionality: X
+    Functionality:
         If time permits maybe add an option for the player to 
         elect how many new colors are added to the combo pattern each turn.
 
@@ -33,7 +33,7 @@ Silver)
 
 Gold)
 
-    Functionality: X
+    Functionality:
         If time permits maybe add sounds for the colors like in the real game.
 
     Styling:
