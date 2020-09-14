@@ -86,6 +86,7 @@ function checkForMatch() {
         checkedArray.push('match');
         colorsMatch = true;
         if(checkedArray.length === colorSequenceGenerated.length) {
+            highScore = levelCounter;
             levelCounter++;
             roundComplete=true;
             sequenceGen();
@@ -307,3 +308,8 @@ endGameButton.addEventListener('click', function() {
     isPlaying = false;
     titleColor = 0;
 });
+
+let highScore = '0';
+localStorage.setItem("highScoreKey", highScore);
+highScore = getStoredValue('highScoreKey');
+
