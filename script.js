@@ -89,7 +89,6 @@ function checkForMatch() {
             levelCounter++;
             roundComplete=true;
             sequenceGen();
-            console.log(turn);
             turn="cpu";
             flashNum=0;
             playTurn();
@@ -163,7 +162,6 @@ startButton.addEventListener('click', function() {
      //create one random color
      if(colorSequenceGenerated.length===levelCounter-1 && diffLevel===1){
          colorSequenceGenerated.push(Math.floor(Math.random()*4)+1);
-         console.log(colorSequenceGenerated);
      } else {
     //create multiple random colors to match difficulty level selected
          for(let i = 0; i < diffLevel; i++) {
