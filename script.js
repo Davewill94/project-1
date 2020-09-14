@@ -100,24 +100,28 @@ function checkForMatch() {
 }
 function yellowFlash() {
     if(audio) {
+        yellowAudio.volume = 0.5;
         yellowAudio.play();  
     }
     yellowButton.style.backgroundColor = "rgba(255, 255, 2, 0.6)";
 }
 function blueFlash() {
     if(audio) {
+        blueAudio.volume = 0.5;
         blueAudio.play();
     }
     blueButton.style.backgroundColor = "lightblue";
 }
 function redFlash() {
     if(audio) {
+        redAudio.volume = 0.5;
         redAudio.play();
     }
     redButton.style.backgroundColor = "lightcoral";
 }
 function greenFlash() {
     if(audio) {
+        greenAudio.volume = 0.5;
         greenAudio.play();        
     }
     greenButton.style.backgroundColor = "lightgreen";
