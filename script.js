@@ -289,9 +289,8 @@ function titleColorChange() {
 
     }, 5000);
 };
+//call title change to start
 titleColorChange();
-
-
 //end game button
 const endGameButton = document.querySelector('#end');
 endGameButton.addEventListener('click', function() {
@@ -323,6 +322,7 @@ function updateHighScore () {
 
 //on page load current value of high score is loaded
 window.onload = function () {
+    
     if(localStorage.getItem('highScoreKey')) {
         highScoreMem.innerText = localStorage.getItem('highScoreKey');
     } else {

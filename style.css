@@ -88,5 +88,13 @@ h1 {
     font-size: 2vw;
 }
 .scores {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.currentRound {
+    padding-right: 5px;
+}
+.highScores {
+    padding: 0px 5px;
+    border-left: 4px solid black;
 }
