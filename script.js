@@ -323,6 +323,11 @@ function updateHighScore () {
 };
 //on page load current value of high score is loaded
 window.onload = function () {
-    highScoreMem.innerText = localStorage.getItem('highScoreKey');
+    if(localStorage.getItem('highScoreKey')) {
+        highScoreMem.innerText = localStorage.getItem('highScoreKey');
+    } else {
+        highScoreMem.innerText = '0';
+    }
+ 
 };
  
