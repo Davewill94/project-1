@@ -87,3 +87,6 @@ h1 {
     font-family: 'Carter One', cursive;
     font-size: 2vw;
 }
+.scores {
+    text-align: center;
+}

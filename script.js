@@ -86,7 +86,9 @@ function checkForMatch() {
         checkedArray.push('match');
         colorsMatch = true;
         if(checkedArray.length === colorSequenceGenerated.length) {
-            highScore = levelCounter;
+            updateHighScore();
+            //localStorage.setItem("highScoreKey", `${levelCounter}`);
+            // let highScore = `${levelCounter}`;
             levelCounter++;
             roundComplete=true;
             sequenceGen();
@@ -309,7 +311,18 @@ endGameButton.addEventListener('click', function() {
     titleColor = 0;
 });
 
-let highScore = '0';
-localStorage.setItem("highScoreKey", highScore);
-highScore = getStoredValue('highScoreKey');
-
+let highScoreMem = document.querySelector('#highScore');
+//add the current score to the high score storage if it is higher
+//parse int was used on localstorage because it returns as string
+function updateHighScore () {
+    if(levelCounter > parseInt(localStorage.getItem('highScoreKey'))) {
+        console.log('made it')
+        localStorage.setItem("highScoreKey", levelCounter);
+        highScoreMem.innerText = localStorage.getItem('highScoreKey');   
+    }
+};
+//on page load current value of high score is loaded
+window.onload = function () {
+    highScoreMem.innerText = localStorage.getItem('highScoreKey');
+};
+ 
