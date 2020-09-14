@@ -266,15 +266,19 @@ function titleColorChange() {
     setInterval(() => {
         if(!isPlaying) {
             if(titleColor===0) {
+                startButton.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
                 pageTitle[0].style.color = 'yellow';
                 titleColor++;
             } else if(titleColor===1) {
+                startButton.style.backgroundColor = 'rgba(255, 255, 255)';
                 pageTitle[0].style.color = 'blue';
                 titleColor++;
             } else if(titleColor===2) {
+                startButton.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
                 pageTitle[0].style.color = 'red';
                 titleColor++;                
             } else {
+                startButton.style.backgroundColor = 'rgba(255, 255, 255)';
                 pageTitle[0].style.color = 'green'; 
                 titleColor=0;           
             }            
