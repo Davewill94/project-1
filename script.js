@@ -282,6 +282,7 @@ function titleColorChange() {
 };
 titleColorChange();
 
+
 //end game button
 const endGameButton = document.querySelector('#end');
 endGameButton.addEventListener('click', function() {
