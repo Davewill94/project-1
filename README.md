@@ -27,7 +27,7 @@ Silver)
         If time permits maybe add an option for the player to 
         elect how many new colors are added to the combo pattern each turn.
 
-    Styling:
+    Styling: 
         Add in a picture of a cat to the center of the color pattern.
         Add a visible score counter. Add updating score counter here?
 
