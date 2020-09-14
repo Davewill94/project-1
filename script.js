@@ -315,12 +315,12 @@ let highScoreMem = document.querySelector('#highScore');
 //add the current score to the high score storage if it is higher
 //parse int was used on localstorage because it returns as string
 function updateHighScore () {
-    if(levelCounter > parseInt(localStorage.getItem('highScoreKey'))) {
-        console.log('made it')
+    if(levelCounter > parseInt(localStorage.getItem('highScoreKey')) || !(localStorage.getItem('highScoreKey'))) {
         localStorage.setItem("highScoreKey", levelCounter);
         highScoreMem.innerText = localStorage.getItem('highScoreKey');   
     }
 };
+
 //on page load current value of high score is loaded
 window.onload = function () {
     if(localStorage.getItem('highScoreKey')) {
