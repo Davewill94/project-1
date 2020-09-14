@@ -323,12 +323,9 @@ function updateHighScore () {
 };
 //on page load current value of high score is loaded
 window.onload = function () {
-    console.log('made it');
     if(localStorage.getItem('highScoreKey')) {
-        console.log('score exists')
         highScoreMem.innerText = localStorage.getItem('highScoreKey');
     } else {
-        console.log('logic worked')
         highScoreMem.innerText = '0';
     }
  
