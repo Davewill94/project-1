@@ -160,6 +160,7 @@ startButton.addEventListener('click', function() {
             sequenceGen();
         }
         playTurn();
+        diffSubmit.disabled = true;
     }
 })
 
@@ -306,14 +307,15 @@ endGameButton.addEventListener('click', function() {
     roundComplete = false;
     isPlaying = false;
     titleColor = 0;
+    diffSubmit.disabled = false;
 });
 
 let highScoreMem = document.querySelector('#highScore');
 //add the current score to the high score storage if it is higher
 //parse int was used on localstorage because it returns as string
 function updateHighScore () {
-    if(levelCounter > parseInt(localStorage.getItem('highScoreKey')) || !(localStorage.getItem('highScoreKey'))) {
-        localStorage.setItem("highScoreKey", levelCounter);
+    if((levelCounter*diffLevel) > parseInt(localStorage.getItem('highScoreKey')) || !(localStorage.getItem('highScoreKey'))) {
+        localStorage.setItem("highScoreKey", (levelCounter*diffLevel));
         highScoreMem.innerText = localStorage.getItem('highScoreKey');   
     }
 };
