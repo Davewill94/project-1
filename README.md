@@ -1,18 +1,16 @@
-# project-1
-Game project
-Title:"Copy Cat"
+# Copy Cat
+A version of the Simon Game
 
-WireFrames:
+###WireFrames:
 ![wireframe](https://i.imgur.com/OHueYbj.png)
 
-Installation Instructions:
+###Installation Instructions:
 
     No installation is needed to play the game.
     Just a web browser and internet connection.
-    Game Link:
-        https://davewill94.github.io/project-1/
+    Game Link: [Click Here](https://davewill94.github.io/project-1/)
 
-Technologies Used:
+###Technologies Used:
     
     Basic html, css and javascript were used to construct much of the game.
     Color flashes were achieved using a combination of setInterval and setTimeout.
@@ -21,7 +19,7 @@ Technologies Used:
     Cat image from (https://knowyourmeme.com/memes/chemistry-cat).
 
 
-Approach Taken:
+###Approach Taken:
 
     The game works by generating a random color array and adding to it every round.
     The number of random colors is equal to the difficulty level selected. As a player pushes a color button that value is pushed into an array for player
@@ -30,7 +28,7 @@ Approach Taken:
         If the current indices match then the player wins the round or is allowed to continue with the round. 
         If the current indices do not match the player looses and the game is restarted.
 
-MVP:
+###MVP:
 
 Bronze)
 
