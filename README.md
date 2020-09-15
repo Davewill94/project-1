@@ -100,4 +100,5 @@ Gold)
 
 Post-MVP:
 
-1. Post MVP I think it would be fun to make the squares move around the screen while playing.
+1. Add a scaling factor to the high score based on difficulty level selected.
+2. Post MVP I think it would be fun to make the squares move around the screen while playing.
