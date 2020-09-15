@@ -18,6 +18,7 @@ Technologies Used:
     Color flashes were achieved using a combination of setInterval and setTimeout.
     Audio was incorporated using new Audio and Play method. The links found were from (https://s3.amazonaws.com/freecodecamp/).
     Local storage was used to keep and update the high score through browser refresh and close.
+    Cat image from (https://knowyourmeme.com/memes/chemistry-cat).
 
 
 Approach Taken:

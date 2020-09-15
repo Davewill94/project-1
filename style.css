@@ -100,3 +100,10 @@ h1 {
     padding: 0px 5px;
     border-left: 4px solid black;
 }
+.try {
+    /* display: flex; */
+    width: 36vw;
+    margin: auto;
+    border-radius: 20px;
+    background-color: black;
+}
