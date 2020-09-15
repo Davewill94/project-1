@@ -8,6 +8,7 @@ The following links contain more information on the project:
   [Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
   [Approach Taken](https://github.com/Davewill94/project-1#approach-taken)  
   [Project Goals](https://github.com/Davewill94/project-1#mvp)
+  [Challenges](https://github.com/Davewill94/project-1#challenges)
 
 
 ### WireFrames:
@@ -62,6 +63,7 @@ window.onload = function () {
     }
 };
 ``` 
+
 ### MVP:
 
 Bronze)
