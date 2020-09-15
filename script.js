@@ -104,7 +104,7 @@ function yellowFlash() {
         yellowAudio.volume = 0.5;
         yellowAudio.play();  
     }
-    yellowButton.style.backgroundColor = "rgba(255, 255, 2, 0.6)";
+    yellowButton.style.backgroundColor = "rgb(255, 255, 173)";
 }
 function blueFlash() {
     if(audio) {
