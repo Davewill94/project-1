@@ -4,11 +4,12 @@ A version of the Simon Game
 ### WireFrames:
 ![wireframe](https://i.imgur.com/OHueYbj.png)
 
-###Installation Instructions:
+### Installation Instructions:
 
     No installation is needed to play the game.
     Just a web browser and internet connection.
-    Game Link: [Click Here](https://davewill94.github.io/project-1/)
+    Game Link: 
+[Click Here](https://davewill94.github.io/project-1/).
 
 ### Technologies Used:
     
@@ -25,8 +26,8 @@ A version of the Simon Game
     The number of random colors is equal to the difficulty level selected. As a player pushes a color button that value is pushed into an array for player
     selected colors. 
     The two arrays are then compared at the current index.
-      * If the current indices match then the player wins the round or is allowed to continue with the round. 
-      * If the current indices do not match the player looses and the game is restarted.
+* If the current indices match then the player wins the round or is allowed to continue with the round. 
+* If the current indices do not match the player looses and the game is restarted.
 
 ### MVP:
 
