@@ -2,17 +2,17 @@
 
 ### Project Overview
 Copy Cat is a version of the classic Simon game. The goal is to match an ever increasing number of color patterns. More experienced players can up the challenge by changing the number of new colors added each round.
-The following links contain more information on the project:
-[WireFrames](https://github.com/Davewill94/project-1#wireframes)  
-[Installation/Link to play](https://github.com/Davewill94/project-1#installation-instructions)  
-[Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
-[Approach Taken](https://github.com/Davewill94/project-1#approach-taken)  
-[Project Goals](https://github.com/Davewill94/project-1#mvp)
+The following links contain more information on the project:  
+  [WireFrames](https://github.com/Davewill94/project-1#wireframes)  
+  [Installation/Link to play](https://github.com/Davewill94/project-1#installation-instructions)  
+  [Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
+  [Approach Taken](https://github.com/Davewill94/project-1#approach-taken)  
+  [Project Goals](https://github.com/Davewill94/project-1#mvp)
 
 
 ### WireFrames:
 ![wireframe](https://i.imgur.com/OHueYbj.png)
-
+Original idea for the general layout of the game.
 ### Installation Instructions:
 
 No installation is needed to play the game.
