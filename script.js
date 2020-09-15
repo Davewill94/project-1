@@ -79,7 +79,7 @@ yellowButton.addEventListener('click', function(event) {
 
 });
 
-//Still need to flesh this out abit.
+//Checks for match of current index of both arrays
 function checkForMatch() {
     if(playerSequence[playerSequence.length-1] === 
         colorSequenceGenerated[playerSequence.length-1]){
