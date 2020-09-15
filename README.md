@@ -7,7 +7,7 @@ The following links contain more information on the project:
   [Installation/Link to play](https://github.com/Davewill94/project-1#installation-instructions)  
   [Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
   [Approach Taken](https://github.com/Davewill94/project-1#approach-taken)  
-  [Project Goals](https://github.com/Davewill94/project-1#mvp)
+  [Project Goals](https://github.com/Davewill94/project-1#mvp)  
   [Challenges](https://github.com/Davewill94/project-1#challenges)
 
 
