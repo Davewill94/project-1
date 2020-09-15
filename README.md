@@ -1,5 +1,12 @@
 # Copy Cat
 A version of the Simon Game
+### Project Overview
+[WireFrames](https://github.com/Davewill94/project-1#wireframes)  
+[Installation/Link to play](https://github.com/Davewill94/project-1#installation-instructions)  
+[Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
+[Approach Taken](https://github.com/Davewill94/project-1#approach-taken)  
+[Project Goals](https://github.com/Davewill94/project-1#mvp)
+
 
 ### WireFrames:
 ![wireframe](https://i.imgur.com/OHueYbj.png)
@@ -7,8 +14,8 @@ A version of the Simon Game
 ### Installation Instructions:
 
 No installation is needed to play the game.
-Just a web browser and internet connection.
-Game Link: 
+Just a web browser and internet connection.  
+Game Link:  
 [Click Here](https://davewill94.github.io/project-1/).
 
 ### Technologies Used:
