@@ -36,6 +36,32 @@ The two arrays are then compared at the current index.
 * If the current indices match then the player wins the round or is allowed to continue with the round. 
 * If the current indices do not match the player looses and the game is restarted.
 
+### Challenges:
+* I had challenges getting the timing of the computer generated color flashing spaced enough for a player to actually know which color was flashing. I struggled with it for most of the first day. Eventually I went trough the code I had kept what I knew worked which was mostly sub functions and scrapped the rest and started over.
+* Getting the sounds to play was also a new thing that required me to do some searching. I settled on the code below:
+```javascript
+const greenAudio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+
+greenAudio.play();
+``` 
+* The persistent high score also took some research. I found localStorage and sessionStorage, with the main difference bing that localStorage is shared between all tabs and windows from the same origin and it does not expire after browser restart or OS reboot, while sessionStorage only survives refresh. I decided to use the localStorage. The first code block below is what I use to update the high score if the player reaches a high enough score. The second block is used to populate the current high score on page load.
+```javascript
+function updateHighScore () {
+    if(levelCounter > parseInt(localStorage.getItem('highScoreKey')) || !(localStorage.getItem('highScoreKey'))) {
+        localStorage.setItem("highScoreKey", levelCounter);
+        highScoreMem.innerText = localStorage.getItem('highScoreKey');   
+    }
+};
+
+//on page load current value of high score is loaded
+window.onload = function () {
+    if(localStorage.getItem('highScoreKey')) {
+        highScoreMem.innerText = localStorage.getItem('highScoreKey');
+    } else {
+        highScoreMem.innerText = '0';
+    }
+};
+``` 
 ### MVP:
 
 Bronze)
