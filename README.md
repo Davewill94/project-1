@@ -1,6 +1,8 @@
 # Copy Cat
-A version of the Simon Game
+
 ### Project Overview
+Copy Cat is a version of the classic Simon game. The goal is to match an ever increasing number of color patterns. More experienced players can up the challenge by changing the number of new colors added each round.
+The following links contain more information on the project:
 [WireFrames](https://github.com/Davewill94/project-1#wireframes)  
 [Installation/Link to play](https://github.com/Davewill94/project-1#installation-instructions)  
 [Technologies Used](https://github.com/Davewill94/project-1#technologies-used)  
@@ -15,15 +17,14 @@ A version of the Simon Game
 
 No installation is needed to play the game.
 Just a web browser and internet connection.  
-Game Link:  
-[Click Here](https://davewill94.github.io/project-1/).
+Game Link: [Click Here](https://davewill94.github.io/project-1/).
 
 ### Technologies Used:
     
 * Basic html, css and javascript were used to construct much of the game.
 * Color flashes were achieved using a combination of setInterval and setTimeout.
 * Audio was incorporated using new Audio and Play method. The links found were from (https://s3.amazonaws.com/freecodecamp/).
-* Local storage was used to keep and update the high score through browser refresh and close.
+* Local storage was used to keep and update the high score through browser refresh and window close.
 * Cat image from (https://knowyourmeme.com/memes/chemistry-cat).
 
 
